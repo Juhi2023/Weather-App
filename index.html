@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--icon-->
+    <link rel="icon" href="images/icon-1.png">
+
+    <!--style-->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Weather App</title>
+</head>
+<body>
+    <img id="sun" src="images/sun.gif" alt="">
+
+    <div class="box">
+        <header><img id="icon"src="images/arrow.png" alt=""> Weather App</header>
+
+        <section class="inputSection">
+            <p class="alert">Please enter valid city name</p>
+            <input type="text" name="city" id="inputBox" placeholder="Enter city name" required>
+            <div class="divider"></div>
+            <button id="locationButt">Get Device Location</button>
+        </section>
+
+        <section id="weather-bodySection">
+            <div class="location">
+                <div id="city">Indore</div>
+                <div style="float: right; font-size: 1.3rem">
+                    <a href="#" class="unitChange active" id="celcius">°C</a> | <a href="#" class="unitChange" id="fahrenhit">°F</a>
+                </div >
+                <div id="temp">20°C</div>
+                <div class="condition-Box">
+                    <img id="condImage" src="#" alt="">
+                    <div id="condition">Haze</div>
+                </div>
+            </div>
+
+            <div class="items">
+                <img src="images/iconmonstr-weather-134.svg" alt="">
+                <div style="margin-left: 10px;" id="max-temp">Max Temperature:</div>
+            </div>
+            
+            <div class="items">
+                <img src="images/iconmonstr-weather-135.svg" alt="">
+                <div style="margin-left: 10px;" id="min-temp">Min Temperature:</div>
+            </div>
+
+            <div class="weather-status">
+                <div class="items">
+                    <img src="images/humidity.png" alt="">
+                    <div style="margin-left: 10px;" id="humidity">Humidity:</div>
+                </div>
+                <div class="items">
+                    <img src="images/wind.png" alt="">
+                    <div style="margin-left: 10px;" id="wind">Wind:</div>
+                </div>
+                <div class="items">
+                    <img src="images/pressure.png" alt="">
+                    <div style="margin-left: 10px;" id="pressure">Pressure:</div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
