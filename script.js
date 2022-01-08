@@ -3,7 +3,8 @@ import {API_KEY} from "./key.js";
 
 const weatherApi= {
     key:API_KEY,
-    baseUrl: "https://api.openweathermap.org/data/2.5/weather"
+    baseUrl: "https://api.openweathermap.org/data/2.5/weather",
+    unit:"metric"
 }
     
 const box=document.querySelector('.box');
@@ -18,7 +19,9 @@ let temp, min_temp, max_temp;
 inputText.addEventListener('keypress', (event) =>{
     if(event.key =="Enter" && inputText!= "")
     {
-        alertBox.textContent=" Gettting weather details..";
+        alertBox.innerHTML=`<div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+        </div> <span> Getting weather details...`;
         alertBox.classList.add('pending');
         requestApi(inputText.value);
     }
@@ -38,7 +41,7 @@ function onSucess(position)
     const lat=position.coords.latitude;
     const lon=position.coords.longitude;
     //https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-    let api=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApi.key}&units=metric`;
+    let api=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApi.key}&units=${weatherApi.unit}`;
     fetch(api).then((response)=>{return response.json()}).then(result=> showWheather(result));
 }
 
@@ -73,19 +76,8 @@ function showWheather(info)
         {
             document.getElementById("city").innerText= `${info.name}, ${info.sys.country}`;
         }
-        let id=info.weather[0].id;
-        if(id==800)
-            document.getElementById('condImage').src='images/clear.gif';
-        else if(id>= 200 && id<=232)
-            document.getElementById('condImage').src='images/thunderstorm.gif';
-        else if (id>=600 && id <=622)
-            document.getElementById('condImage').src='images/snow.gif';
-        else if(id>=701 && id <=781)
-            document.getElementById('condImage').src='images/haze.gif';
-        else if(id>=801 && id <=804)
-            document.getElementById('condImage').src='images/cloud.gif';
-        else if((id>=300 && id <=321) || (id>=500 && id <=531))
-            document.getElementById('condImage').src='images/rain.gif';
+        let id=info.weather[0].icon;
+        document.getElementById('condImage').src=`http://openweathermap.org/img/wn/${id}@2x.png`;
 
         temp= info.main.temp;
         min_temp= info.main.temp_min;
