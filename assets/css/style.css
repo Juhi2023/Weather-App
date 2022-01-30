@@ -37,15 +37,6 @@ body{
     width: 33rem;
 }
 
-#icon{
-    width: 0;
-    height: 0;
-    padding: 1rem 1rem 0 0;
-}
-
-#icon:hover{
-    cursor: pointer ;
-}
 
 header{
     color: rgb(29, 71, 5);
@@ -54,11 +45,6 @@ header{
     font-size: 1.5rem;
     padding: 1rem 2rem;
 }
-/* for active */
-.box.active #icon{
-    width: 2.5rem;
-    height: 2.5rem;
-}
 
 .inputSection{
     padding: 2rem 2rem;
@@ -66,9 +52,6 @@ header{
     border: none;
 }
 
-.inputSection.deactive{
-    display: none;
-}
 
 .alert{
     border-radius: 1rem;
@@ -93,23 +76,8 @@ header{
     display: block;
 }
 
-.divider::before{
-    content: "or";
-    padding: 0px 1.2rem;
-    color: rgb(141, 138, 138);
-    background-color: white;
-}
-.divider{
-    background-color: rgb(182, 179, 179);
-    height: 1px;
-    width:100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#inputBox, #locationButt{
+#inputBox{
     border: 1px solid rgb(182, 179, 179);
     outline: none;
     height :4.5rem;
@@ -121,26 +89,8 @@ header{
     margin: 1rem 0;
 }
 
-#locationButt{
-    background-color: #2d6816;
-    border: none;
-    color: white;
-    font-weight: 550;
-    margin: 2rem 0;
-}
-
-#locationButt:hover{
-    cursor: pointer;
-    background-color: rgb(35, 141, 49);
-}
-
 #weather-bodySection{
     display: none;
-}
-
-/* for active */
-.box.active #weather-bodySection{
-    display: block;
 }
 
 .location{
@@ -179,8 +129,11 @@ header{
 }
 
 #condImage{
-    height: 13rem;
-    width: 13rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
 }
 
 .items{
@@ -196,7 +149,6 @@ header{
     height: 2rem;
 }
 
-
 .weather-status{
     display: flex;
     flex-direction: column;
@@ -206,17 +158,41 @@ header{
     border-bottom: 1px solid rgb(182, 180, 180);
 }
 
-
-
 .unitChange{
     font-weight: 700;
     text-decoration: none;
     color: black;
     font-size: 1.4rem;
 }
+
 .unitChange.active{
     color: rgb(156, 160, 160);
 }
+
+
+#locationButt{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 5rem;
+    background-color: black;
+    color: white;
+    font-weight: 550;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    transition: all ease 0.4s;
+    border: 0.2rem solid gainsboro;
+}
+
+#locationButt img{
+    width: 6rem;
+}
+
+#locationButt:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 
 
 @media (max-width: 931px) {
@@ -225,13 +201,11 @@ header{
     }
 }
 
-
 @media (max-width: 710px) {
     html {
         font-size: 50%;
     }
 }
-
 
 @media (max-width: 600px) {
     html {
@@ -239,17 +213,8 @@ header{
     }
 }
 
-
 @media (max-width: 420) {
     html {
         font-size: 40%;
     }
 }
-
-
-
-
-
-
-
-

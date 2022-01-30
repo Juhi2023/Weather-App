@@ -11,7 +11,7 @@ const box=document.querySelector('.box');
 let inputSection=box.querySelector('.inputSection');
 let alertBox= inputSection.querySelector('.alert');
 let inputText=inputSection.querySelector('input');
-let locationBtn=inputSection.querySelector('button');
+let locationBtn=document.getElementById('locationButt');
 let weatherBody=document.getElementById('weather-bodySection');
 let backIcon=document.getElementById('icon');
 let temp, min_temp, max_temp;
@@ -79,6 +79,16 @@ function showWheather(info)
         let id=info.weather[0].icon;
         document.getElementById('condImage').src=`http://openweathermap.org/img/wn/${id}@2x.png`;
 
+        if(id[2]=="n")
+        {
+            document.getElementById('sun').src="images/moon.gif";
+            document.body.style.backgroundColor="#151844";
+        }
+        else{
+            document.getElementById('sun').src="images/sun.gif";
+            document.body.style.backgroundColor="#48befe";
+        }
+
         temp= info.main.temp;
         min_temp= info.main.temp_min;
         max_temp= info.main.temp_max;
@@ -92,15 +102,9 @@ function showWheather(info)
 
         alertBox.classList.remove('pending');
         weatherBody.classList.add('active');
-        inputSection.classList.add('deactive');
-        box.classList.add('active');
+        weatherBody.style.display="block";
     }
 }
-
-backIcon.addEventListener('click', ()=>{
-    inputSection.classList.remove('deactive');
-    box.classList.remove('active');
-});
 
 
 document.getElementById('fahrenhit').addEventListener('click', (event)=>{

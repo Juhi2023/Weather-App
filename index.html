@@ -10,21 +10,19 @@
     <link rel="icon" href="images/icon-1.png">
 
     <!--style-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <title>Weather App</title>
 </head>
 <body>
     <img id="sun" src="images/sun.gif" alt="">
-
+    
     <div class="box">
-        <header><img id="icon"src="images/arrow.png" alt=""> Weather App</header>
+        <header>Weather App</header>
 
         <section class="inputSection">
             <p class="alert">Please enter valid city name</p>
             <input type="text" name="city" id="inputBox" placeholder="Enter city name" required>
-            <div class="divider"></div>
-            <button id="locationButt">Get Device Location</button>
         </section>
 
         <section id="weather-bodySection">
@@ -64,10 +62,12 @@
                     <div style="margin-left: 10px;" id="pressure">Pressure:</div>
                 </div>
             </div>
-            
         </section>
     </div>
+    <div style="height: 15vh;"></div>
 
-    <script type="module" src="script.js"></script>
+    <button id="locationButt"> Get Device Location <img src="images/location.png" alt=""></button>
+
+    <script type="module" src="assets/js/script.js"></script>
 </body>
 </html>
