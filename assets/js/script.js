@@ -76,8 +76,11 @@ function showWheather(info)
         {
             document.getElementById("city").innerText= `${info.name}, ${info.sys.country}`;
         }
+
         let id=info.weather[0].icon;
         document.getElementById('condImage').src=`http://openweathermap.org/img/wn/${id}@2x.png`;
+        inputText.value = info.name;
+
 
         if(id[2]=="n")
         {
@@ -101,7 +104,7 @@ function showWheather(info)
         document.getElementById("min-temp").innerText= `Min Temperature: ${Math.floor(info.main.temp_min)}°C`;
 
         alertBox.classList.remove('pending');
-        weatherBody.classList.add('active');
+        alertBox.classList.remove('error');
         weatherBody.style.display="block";
     }
 }
