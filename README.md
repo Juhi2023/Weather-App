@@ -2,6 +2,7 @@
 #### 1. Weather App made using HTML, CSS and JavaScript OpenWeatherMap API
 #### 2. It can show weather of **current location**. 
 
-<img src="https://user-images.githubusercontent.com/87862089/148669953-a8ede532-54d2-4d8d-b660-cd8074dbc52e.png" width="400px">
-<img src="https://user-images.githubusercontent.com/87862089/148669944-fbb41b4c-c5af-42c1-a10e-eba036fd4edc.png" width="400px">
-<img src="https://user-images.githubusercontent.com/87862089/148669955-529a200b-34bd-4fd0-bb74-3ad8a2d4ecf0.png" width="400px">
+<img src="https://user-images.githubusercontent.com/87862089/151702413-51f3196e-5a0a-4662-a662-341dd9672ce4.png" width="400px">
+<img src="https://user-images.githubusercontent.com/87862089/151702398-ac8ac5d5-6b1e-4d62-aed0-3189fbe39fda.png" width="400px">
+<img src="https://user-images.githubusercontent.com/87862089/151702369-bb0f9322-b373-40d2-9683-1ac375f702e4.png" width="400px">
+
